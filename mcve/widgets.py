@@ -1,15 +1,8 @@
 from tkinter import *
 
-
-# JUST SET THE GEOMETRY SIMILAR TO THE TIMERAPP
-
-
 class Widgets(Frame):
-	def __init__(self, parent, controller):
+	def __init__(self, parent):
 		Frame.__init__(self, parent)
-		self.controller = controller
-		
-
 
 		btn_back = Button(self, text="Back", command=self.back_clicked)
 		Label(self, text="This is the widgets frame").grid(row=0,column=1)
@@ -24,7 +17,7 @@ class Widgets(Frame):
 
 
 	def back_clicked(self):
-		self.controller.show_frame("MainMenu")
+		self.master.show_frame("MainMenu")
 
 	def random_widgets(self):
 		for i in range(5):
@@ -46,13 +39,6 @@ class Widgets(Frame):
 
 		return frame
 
-
 	def draw_row(self, row):
 		row.grid(row=len(self.rows), column=0)
-
-
-	def reset(self):
-		# self.controller.geometry("")
-		pass
-		
 
